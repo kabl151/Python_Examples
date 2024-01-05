@@ -18,10 +18,10 @@ for s in alphabet_List:
     
     if s in ex_Str:
         coordi_List[alphabet_List.index(s)] = ex_Str.find(s)
-        
+
     else:
         coordi_List[alphabet_List.index(s)] = ex_Str.find(s)
-        
+
 #최종 출력
 print(*coordi_List)
 
