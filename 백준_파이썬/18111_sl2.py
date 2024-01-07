@@ -36,6 +36,8 @@ def Demand_Block():
     return demand_Number #쌓기에는 부족한 블럭 수를 리턴 받음.
 
 def Think_Action():
+    global B
+    global total_Time
     if Demand_Block() > 0:
         Max_Tile_Digging_Once()
     elif Demand_Block() <= 0:
@@ -58,16 +60,20 @@ def create_field_Container(): #1차원 리스트로 리턴 받음.
     return find_Container
 
 def Max_Tile_Digging_Once():
+    global B
+    global total_Time
     #찾고 #뺸다 #블럭+1 #시간+2
     for i in range(len(map_Entire)):
         for j in range(len(map_Line)):
             if map_Entire[i][j] == max(create_field_Container()):
                 #해당 블럭이 최댓값과 일치하면
                 map_Entire[i][j] = map_Entire[i][j] - 1 #뺀다
-                block_Ea = block_Ea + 1 #블럭추가
+                B = B + 1 #블럭추가
                 total_Time = total_Time + 2 #시간추가
                 
 def height_Only_Two():
+    global B
+    global total_Time
     for i in range(len(map_Entire)):
         for j in range(len(map_Line)):
             det_height_Set.add(map_Entire[i][j])
@@ -75,7 +81,7 @@ def height_Only_Two():
     
     if height_Ea == 2:
         Think_Action()
-        
+
     elif height_Ea > 2:
         #최소 위치에 하나 쌓기
         create_field_Container() #콘테이너 렌더링
