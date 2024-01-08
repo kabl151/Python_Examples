@@ -3,6 +3,7 @@ print(" -=-= P R O G R A M _ S T A R T =-=-")
 print("▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽")
 ######################################################
 
+# 행렬 덧셈 문제
 
 N, M = map(int, input().split())
 Matrix_list_1 = []
@@ -19,7 +20,9 @@ def solution(arr1, arr2):
         for j in range(len(arr1[0])):
             arr1[i][j] += arr2[i][j]
     return arr1
+
 solution(Matrix_list_1, Matrix_list_2)
+
 for k in range(N):
     print(*Matrix_list_1[k])
 """
