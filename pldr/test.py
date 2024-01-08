@@ -1,10 +1,4 @@
-arr = [input() for _ in range(5)]
-res = ''
-
-for i in range(15):
-    for j in range(5):
-        try:
-            res += arr[j][i]
-        except IndexError:
-            pass
-print(res)
+a = [[1,2,3],[4,5,6]]
+a[0][0] = a[0][0] + 1
+b = []
+print(len(b))
