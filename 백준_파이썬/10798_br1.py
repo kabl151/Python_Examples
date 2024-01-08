@@ -42,7 +42,25 @@ for n in range(15):
 
 #결과 출력
 for p in resultField:
-    print(p, end="")
+    print(p, end="")    
+
+
+####################숏코드#######################
+arr = [input() for _ in range(5)]
+res = ''
+
+for i in range(15):
+    for j in range(5):
+        try:
+            res += arr[j][i]
+        except IndexError:
+            pass
+print(res)
+#############################################
+#2차원 배열 꼭 리스트 2개 작성 안해도 된다.
+#'문자열'로 저장된 것도 리스트 처럼 접근이 가능하거덩.
+
+
 
 #######################################################
 print(" △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲")

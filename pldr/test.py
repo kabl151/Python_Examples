@@ -1,7 +1,10 @@
-a =  0.1
-b =  0.2
+arr = [input() for _ in range(5)]
+res = ''
 
-if a + b == 0.3:
-    print('true')
-else:
-    print('false')
+for i in range(15):
+    for j in range(5):
+        try:
+            res += arr[j][i]
+        except IndexError:
+            pass
+print(res)
