@@ -1,6 +1,6 @@
 """
 <문제 링크>
-https://www.acmicpc.net/problem/10798
+https://www.acmicpc.net/problem/2563
 """
 print(" ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■")
 print(" -=-= P R O G R A M _ S T A R T =-=-")
