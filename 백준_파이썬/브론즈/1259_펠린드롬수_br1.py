@@ -74,3 +74,13 @@ while True:
     if n == 0:
         break
 """
+#숏코딩
+while True:
+    a = input()
+    b = a[::-1]
+    if a == '0':
+        break
+    elif b == a:
+        print("yes")
+    else:
+        print("no")
