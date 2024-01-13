@@ -3,25 +3,19 @@ print(" -=-= P R O G R A M _ S T A R T =-=-")
 print("▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼")
 ######################################################
 
-H, M = map(int,input().split())
+#파이썬 시간 오래걸리는걸 보여주는 극단적인 문제임.
+import sys
+sys.set_int_max_str_digits(10000000) # 최대 입력 자리수 확장시키는 방법.
 
-#알람 생성
-M = M - 45
+T = int(input())
 
-#시간 룰 생성(마지막)
-if M < 0:
-    H = H - 1
-    M = M + 60
-elif M > 60:
-    H = H + 1
-    M = M - 60
+for t in range(T): #테스트케이스 루프
+    a, b = map(int, input().split())
+    totalData = a ** b
     
-if H < 0:
-    H = H + 24
-elif H > 24:
-    H = H -24
-#출력
-print(f'{H} {M}')
+    trans_totalData = str(totalData) #토탈데이터 문자열로 만들어야 마지막 문자열 접근 가능.
+    
+    print(trans_totalData[-1])
 
 #######################################################
 print(" ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲")
