@@ -1,10 +1,8 @@
-a = []
-p = {} # 중요도
+from queue import Queue
 
-N, M = map(int,input().split())
-a = list(map(int,input().split()))
+Q = Queue()
+Q.put(1)
+Q.put(2)
+x = Q.get()
 
-for n in range(N):
-    p[n] = a[n]
-
-print(p[M])
+print(x)
