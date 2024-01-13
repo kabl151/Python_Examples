@@ -18,8 +18,51 @@ print(" ■■■■■■■■■■■■■■■■■■■■■■■■
 print(" -=-= P R O G R A M _ S T A R T =-=-")
 print("▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽")
 ######################################################
+n = None
+numberList = []
+a = 0
 
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    else:
+        new_n = str(n)
+        for nn in new_n:
+            numberList.append(nn)
+        length_numberList = int(len(numberList))
+        length_numberList_div2 = int(len(numberList)/2)
+        if len(numberList) == 1:
+            print("yes")
+            numberList =[]
+            
+        elif length_numberList % 2 == 0: #짝수일 때
+            for i in range(length_numberList_div2):
+                if numberList[i] == numberList[length_numberList-1-i]:
+                    a = a + 1
+                    if a == length_numberList_div2:
+                        print("yes")
+                        a = 0
+                        numberList = []
+                else:
+                    print("no")
+                    a = 0
+                    numberList = []
+                    break
 
+        elif length_numberList % 2 != 0:#홀수일 때
+            for i in range(length_numberList_div2):
+                if numberList[i] == numberList[length_numberList-1-i]:
+                    a = a + 1
+                    if a == length_numberList_div2:
+                        print("yes")
+                        a = 0
+                        numberList = []
+                else:
+                    print("no")
+                    a = 0
+                    numberList = []
+                    break
 
 
 
@@ -28,6 +71,9 @@ print(" △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲"
 print(" -=-=   P R O G R A M _ E N D   =-=-")
 print(" ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■")
 """ Comment
-loop 종료가 해결이 안되어서 sys.exit()를 사용했음
-비둘기 머리콥터 문제인걸까?
+0을 입력받으면 종료 메커니즘
+while True:
+    n = int(input())
+    if n == 0:
+        break
 """
