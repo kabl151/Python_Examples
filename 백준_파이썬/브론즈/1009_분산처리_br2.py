@@ -10,11 +10,11 @@ sys.set_int_max_str_digits(10000000) # 최대 입력 자리수 확장시키는 �
 T = int(input())
 
 for t in range(T): #테스트케이스 루프
+    
     a, b = map(int, input().split())
     totalData = a ** b
     
     trans_totalData = str(totalData) #토탈데이터 문자열로 만들어야 마지막 문자열 접근 가능.
-    
     print(trans_totalData[-1])
 
 #######################################################
