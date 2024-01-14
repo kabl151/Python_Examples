@@ -1,8 +1,2 @@
-from queue import Queue
-
-Q = Queue()
-Q.put(1)
-Q.put(2)
-x = Q.get()
-
-print(x)
+a = [0, 1, 2, 3, 4, 5]
+print(a[1:])
