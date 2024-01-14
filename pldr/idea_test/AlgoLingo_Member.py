@@ -41,6 +41,6 @@ for s in range(sessionNumber):
     leaderIndex = newMemberList[s].index(leader) #리더 인덱스 구하기.
     del newMemberList[s][leaderIndex] #리더와 발표자 겁치지 않도록 리더 제외.
     PR_member = random.choice(newMemberList[s]) #이렇게 하면 리더와 발표자가 겹치지 않는다.
-    print(f'■ 세션 리더는 [{leader}]님 이고, 메인 발표자는 [{PR_member}]님 입니다. ■')
+    print(f'■ 세션 리더는 "{leader}"님 이고, 메인 발표자는 "{PR_member}"님 입니다. ■')
     print(" ")
 print('-----------------------프로그램 실행 완료------------------------------------------------')
