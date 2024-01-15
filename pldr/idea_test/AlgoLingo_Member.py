@@ -6,6 +6,7 @@ from datetime import datetime
 nowTimeStamp = datetime.now()
 memberList = []
 newMemberList = []
+n = 0
 print("----------------------------------------------------------------------------")
 print(" ")
 memberNum = int(input("스터디 전체 멤버수를 입력하세요. ▶  "))
@@ -27,10 +28,19 @@ random.shuffle(memberList)
 
 #새로운 세션 생성.
 #근데 이거 문제가 있음. 7명 3세션으로 나누면 3-2-2가 아니고 3-3-1로 나누어짐.
-for s in range(sessionNumber):#각 세션 수만큼 루프
-    n = math.ceil(memberNum/sessionNumber) # 한 세션에 속할 수 있는 최대인원. (올림으로 받음.) 근데 여기때문에 3-3-1 같은 불상사가 일어나는거 같음.
-    newMemberList.append(memberList[n*s:n*(s+1)])
-    
+n = int(math.ceil(memberNum/sessionNumber))# n값 초기 설정
+for s in range(sessionNumber):
+    newMemberList.append(memberList[:n])
+    del memberList[:n]
+    try:
+        n = int(math.ceil((memberNum-n)/(sessionNumber-(s)))) # n값 갱신
+        memberNum = memberNum - n #나머지 멤버수 갱신
+        print(memberList)
+        print(newMemberList)
+        print(" ")
+    except:
+        pass
+
 #출력
 print(" ")
 print(f'----------------------결과 출력 일시 : {nowTimeStamp}-----------------------')
