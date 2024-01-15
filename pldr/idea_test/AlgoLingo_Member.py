@@ -26,16 +26,20 @@ for t in range(memberNum):
 #멤버 랜덤 셔플
 random.shuffle(memberList)
 
-#새로운 세션 생성.
-#근데 이거 문제가 있음. 7명 3세션으로 나누면 3-2-2가 아니고 3-3-1로 나누어짐.
+#새로운 세션 생성과정.
+#n 값은 한 세션에 몇 명씩 배정하는지 결정하는 인자임. 
+#n 값에 따라서 나누는 방식이 달라짐. 
 n = int(math.ceil(memberNum/sessionNumber))# n값 초기 설정
 for s in range(sessionNumber):
     newMemberList.append(memberList[:n])
     del memberList[:n]
-    try:
-        n = int(math.ceil((memberNum-n)/(sessionNumber-(s)))) # n값 갱신
-        memberNum = memberNum - n #나머지 멤버수 갱신
-    except:
+    if n % 2 != 0: # 모든 세션이 동등한 인원수로 구성할 수 없을 때. 예를 들어, 3-3-2 명 같은 구성임.
+        try:
+            n = int(math.ceil((memberNum-n)/(sessionNumber-(s)))) # n값 갱신
+            memberNum = memberNum - n #나머지 멤버수 갱신
+        except:
+            pass
+    elif n % 2 == 0:
         pass
 
 #출력
@@ -48,6 +52,6 @@ for s in range(sessionNumber):
     leaderIndex = newMemberList[s].index(leader) #리더 인덱스 구하기.
     del newMemberList[s][leaderIndex] #리더와 발표자 겁치지 않도록 리더 제외.
     PR_member = random.choice(newMemberList[s]) #이렇게 하면 리더와 발표자가 겹치지 않는다.
-    print(f'■ 세션 리더는 "{leader}"님 이고, 메인 발표자는 "{PR_member}"님 입니다. ■')
+    print(f' ■ 세션 리더는 "{leader}"님 이고, 메인 발표자는 "{PR_member}"님 입니다. ■')
     print(" ")
 print('-----------------------프로그램 실행 완료------------------------------------------------')
