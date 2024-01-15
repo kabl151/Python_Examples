@@ -35,9 +35,6 @@ for s in range(sessionNumber):
     try:
         n = int(math.ceil((memberNum-n)/(sessionNumber-(s)))) # n값 갱신
         memberNum = memberNum - n #나머지 멤버수 갱신
-        print(memberList)
-        print(newMemberList)
-        print(" ")
     except:
         pass
 
