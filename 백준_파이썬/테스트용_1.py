@@ -1,8 +1,8 @@
-fruitApple = '사과 '
-fruitBanana = '바나나'
-fruitKiWi = '키위'
-intoEnglish = '영어로 '
+books = ['광문자전', '유연전', '심청전', '홍길동전', '수성지']
+authors = ['작자 미상', '허균', '박지원', '이항복', '임제']
 
-print(f'{fruitApple}는 {intoEnglish}apple')
-print(f'{fruitBanana}는 {intoEnglish}banana')
-print(f'{fruitKiWi}는 {intoEnglish}kiwi')
+print(authors[1], ':',books[3])
+print(authors[3], ':',books[1])
+print(authors[0], ':',books[2])
+print(authors[2], ':',books[0])
+print(authors[4], ':',books[4])
