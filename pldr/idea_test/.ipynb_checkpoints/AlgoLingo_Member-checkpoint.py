@@ -16,13 +16,10 @@ print("-------------------------------------------------------------------------
 print(" ")
 #멤버 이름 입력받고 리스트에 저장.
 for t in range(memberNum):
-    
-    
-    print(" ")
+    print("")
     a = str(input(f'{t+1} 번째 멤버 ▶ '))
     memberList.append(a)
     print(f'현재 입력된 멤버는 {memberList} 입니다.')
-    
 #멤버 랜덤 셔플
 random.shuffle(memberList)
 
