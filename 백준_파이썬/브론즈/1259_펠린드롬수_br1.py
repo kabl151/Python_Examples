@@ -73,6 +73,8 @@ while True:
     n = int(input())
     if n == 0:
         break
+        
+리스트를 잘 다루고 못다루고를 극단적으로 보여주는 문제
 """
 #숏코딩
 while True:
