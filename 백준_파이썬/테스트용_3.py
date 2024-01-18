@@ -1,23 +1,25 @@
-number_of_book = 100
+food_list = [
+    {
+        '종류': '한식',
+        '이름': '잡채'
+    },
+    {
+        '종류': '채소',
+        '이름': '토마토'
+    },
+    {
+        '종류': '중식',
+        '이름': '자장면'
+    },
+]
 
-def rental_book(name, bookEa):
-    global number_of_book
-    decrease_book(bookEa)
-    print(f'남은 책의 수 : {number_of_book}')
-    print(f'{name}님이 {bookEa}권의 책을 대여하였습니다.')
-    pass
-
-def decrease_book(bookEa):
-    global number_of_book
-    number_of_book -= bookEa
-    pass
-
-print(f'남은 책의 수 : {number_of_book}')
-
-
-name = str(input('이름을 입력하세요. : '))
-bookNum = int(input('대여할 책의 권 수를 입력하세요. : '))
-
-rental_book(name, bookNum)
-
-
+# 아래에 코드를 작성하시오.
+for i in range(3):
+    if food_list[i]['이름'] == '토마토':
+        food_list[i]['종류'] = '과일'
+        print(f"{food_list[i]['이름']} 은/는 {food_list[i]['종류']} (이)다.")
+    
+    elif food_list[i]['이름'] == '자장면':
+        print('자장면엔 고춧가루지')
+        print(f"{food_list[i]['이름']} 은/는 {food_list[i]['종류']} (이)다.")
+print(food_list)
