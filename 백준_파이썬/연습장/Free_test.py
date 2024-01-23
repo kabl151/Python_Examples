@@ -18,12 +18,19 @@ print(" ■■■■■■■■■■■■■■■■■■■■■■■■
 print(" -=-= P R O G R A M _ S T A R T =-=-")
 print("▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽")
 ######################################################
-str_temp = 'askjdkjhdsfkjh askldflk lksdalkjfsad'
-
-for i in range(len(a)):
-    if str_temp[i] == " ":
-        print(" ")
-
+def my_copy(origin):
+    new_arr = []
+    #반복문을 이용해서
+    #복사하고 ... 반환
+    for i in range(len(origin)):
+        new_arr.append(origin[i])
+    return new_arr
+    
+arr = [1,2,3]
+new_arr = my_copy(arr)
+new_arr[0] = 100
+print(arr)
+print(new_arr)
 
 ######################################################
 print(" △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲")
@@ -33,3 +40,4 @@ print(" ■■■■■■■■■■■■■■■■■■■■■■■■
 loop 종료가 해결이 안되어서 sys.exit()를 사용했음
 비둘기 머리콥터 문제인걸까?
 """
+
