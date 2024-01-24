@@ -30,7 +30,9 @@ random.shuffle(memberList)
 #n 값은 한 세션에 몇 명씩 배정하는지 결정하는 인자임. 
 #n 값에 따라서 나누는 방식이 달라짐. 
 n = int(math.ceil(memberNum/sessionNumber))# n값 초기 설정
+
 for s in range(sessionNumber):
+    n = int(math.ceil(memberNum/sessionNumber))
     newMemberList.append(memberList[:n])
     del memberList[:n]
     if n % 2 != 0: # 모든 세션이 동등한 인원수로 구성할 수 없을 때. 예를 들어, 3-3-2 명 같은 구성임.
@@ -39,7 +41,7 @@ for s in range(sessionNumber):
             memberNum = memberNum - n #나머지 멤버수 갱신
         except:
             pass
-    elif n % 2 == 0:
+    elif n % 2 == 0 or n % 3 == 0 :
         pass
 
 #출력
