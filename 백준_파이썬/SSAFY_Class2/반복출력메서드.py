@@ -1,13 +1,34 @@
 # 아래 클래스를 수정하시오.
-class StringRepeater:
+class Animal:
+    num_of_animal = 0
     
     def __init__(self):
-        pass
+        Animal.num_of_animal += 1
     
-    def repeat_string(self,times,msg):
-        for i in range(times):
-            print(f'{msg}')
+    @classmethod
+    def access_num_of_animal(cls):
+        return f'동물의 수는 {cls.num_of_animal}마리 입니다.'    
 
 
-repeater1 = StringRepeater()
-repeater1.repeat_string(3, "Hello")
+class Dog(Animal):
+    def __init__(self):
+        super().__init__()
+        
+
+
+class Cat(Animal):
+    def __init__(self):
+        super().__init__()
+
+
+class Pet(Dog, Cat):
+    def __init__(self):
+        super().__init__()
+        
+    # def access_num_of_animal():
+    #     return f'동물의 수는 {Animal.num_of_animal}마리 입니다.'
+
+dog = Dog()
+print(Pet.access_num_of_animal())
+cat = Cat()
+print(Pet.access_num_of_animal())
