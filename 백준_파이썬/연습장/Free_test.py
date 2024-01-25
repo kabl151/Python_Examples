@@ -18,19 +18,54 @@ print(" ■■■■■■■■■■■■■■■■■■■■■■■■
 print(" -=-= P R O G R A M _ S T A R T =-=-")
 print("▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽ ▼▽")
 ######################################################
-def my_copy(origin):
-    new_arr = []
-    #반복문을 이용해서
-    #복사하고 ... 반환
-    for i in range(len(origin)):
-        new_arr.append(origin[i])
-    return new_arr
+import sys
+N = int(input())
+queue = []
+com_List = []
+head_idx = 0
+tail_idx = 0
+
+for n in range(N):
     
-arr = [1,2,3]
-new_arr = my_copy(arr)
-new_arr[0] = 100
-print(arr)
-print(new_arr)
+    com_List = list(sys.stdin.readline().split())
+    
+    if com_List[0] == 'push':
+        queue.append(int(com_List[1]))
+        tail_idx += 1
+
+    elif com_List[0] == 'pop':
+        try:
+            print(queue[head_idx])
+            del queue[head_idx]
+            try:
+                head_idx = 0
+            except:
+                head_idx = tail_idx = 0
+        except IndexError:
+            print(-1)
+
+    elif com_List[0] == 'size':
+        print(len(queue))
+
+    elif com_List[0] == 'empty':
+        if len(queue) == 0: #비어있으면
+            print(1)
+        else:
+            print(0)
+
+    elif com_List[0] == 'front':
+        if len(queue) == 0:
+            print(-1)
+        else:
+            print(queue[head_idx])
+
+    elif com_List[0] == 'back':
+        if len(queue) == 0:
+            print(-1)
+        else:
+            print(queue[-1])
+    
+    com_List = []
 
 ######################################################
 print(" △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲ △ ▲")
