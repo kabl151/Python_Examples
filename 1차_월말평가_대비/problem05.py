@@ -22,7 +22,7 @@ user_data1 = {
 print(is_user_data_valid(user_data1)) # False 
 
 user_data2 = {
-    'id': 'jungssafy',
+    'id': 'jungssa fy',
     'password': '1q2w3e4r',
 }
 print(is_user_data_valid(user_data2)) # True
