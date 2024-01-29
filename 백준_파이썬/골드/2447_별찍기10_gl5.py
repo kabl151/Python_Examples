@@ -19,3 +19,7 @@ def sTarK(n):
         return f'{PEKA_1(n)}\n{PEKA_2(n)}\n{PEKA_1(n)}'
 
 print(sTarK(9))
+
+
+
+N_list = list(map(int, input().split()))
