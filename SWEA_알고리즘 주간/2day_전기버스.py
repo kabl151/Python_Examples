@@ -26,7 +26,8 @@ for t in range(T):
                 cnt += 1
                 btry = K
                 continue
-                
+            continue
+            
         elif dst_List[i] > btry:
             print(0)
             break
