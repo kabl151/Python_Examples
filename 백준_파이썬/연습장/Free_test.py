@@ -1,1 +1,3 @@
-print(int(4.5))
+n = input()
+for k in n:
+    print(k)
