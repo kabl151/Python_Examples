@@ -1,3 +1,2 @@
-n = input()
-for k in n:
-    print(k)
+for i in range(0,5):
+    print(i)

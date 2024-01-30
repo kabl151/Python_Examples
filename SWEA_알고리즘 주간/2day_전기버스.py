@@ -14,29 +14,30 @@ for t in range(T):
     dst_List.append(N - chrg_Station[-1])
     
     for i in range(0, len(dst_List)-1):
+        if i == (len(dst_List) - 2):
+            print(cnt)
+            break
+        
         if dst_List[i] < btry:
             if dst_List[i] + dst_List[i+1] <= btry:
-                print('1번경우')
                 continue
             
             elif dst_List[i] + dst_List[i+1] > btry:
                 cnt += 1
                 btry = K
-                print('2번경우')
                 continue
                 
         elif dst_List[i] > btry:
             print(0)
-            print('3번경우')
             break
             
         elif dst_List[i] == btry:
             btry = K
-            print('4번경우')#충전
+            cnt += 1 
             continue
         
-    print(dst_List)    
-    print(cnt)
+        
+
 
 
 
