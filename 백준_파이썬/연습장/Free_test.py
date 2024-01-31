@@ -1,2 +1,2 @@
 for i in range(0,5):
-    print(i)
+    print(i) # 0 1 2 3 4 

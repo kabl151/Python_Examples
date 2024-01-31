@@ -1,43 +1,43 @@
+
 T = int(input())
 for t in range(T):
+    
     #K = 최대 이동 정류장 수, N 종점 번호,  M 충전기가 있는 정류장 번호
+
     K, N, M = map(int, input().split())
     chrg_Station = list(map(int, input().split())) # 충전소 번호
     dst_List =[]
     cnt = 0
+    swch = False
     btry = int(K)
     
-    dst_List.append(chrg_Station[0])
+    #거리차 리스트 만들기.
+    dst_List.append(chrg_Station[0])    #출발지와 첫 충전소 거리 차이 추가
     for i in range(0, len(chrg_Station)-1):
-        dist = chrg_Station[i+1] - chrg_Station[i] 
-        dst_List.append(dist)
-    dst_List.append(N - chrg_Station[-1])
-    
-    for i in range(0, len(dst_List)-1):
-        if i == (len(dst_List) - 2):
-            print(cnt)
-            break
-        
+        dist = chrg_Station[i+1] - chrg_Station[i] #충전소 간 거리차 = dist
+        dst_List.append(dist)    #dist 리스트에 거리차 추가.
+    dst_List.append(N - chrg_Station[-1])   #종점과 마지막 충전소간 거리차 추가
+    #이로써 dst_List 거리까지 차이는 '구간별 길이 리스트'가 됨.
+    for i in range(0, len(dst_List)-1): # 0부터 충전소들간 거리 마지막까지.
         if dst_List[i] < btry:
             if dst_List[i] + dst_List[i+1] <= btry:
                 continue
-            
             elif dst_List[i] + dst_List[i+1] > btry:
                 cnt += 1
                 btry = K
                 continue
             continue
-            
         elif dst_List[i] > btry:
             print(0)
+            swch = True
             break
-            
         elif dst_List[i] == btry:
             btry = K
             cnt += 1 
             continue
+    if swch == False:
+        print(cnt)
         
-        
 
 
 
@@ -46,6 +46,38 @@ for t in range(T):
 
 
 
+T = int(input())
+for t in range(T):
+    K, N, M = map(int, input().split())
+    chrg_Station = list(map(int, input().split()))
+    dst_List =[]
+    cnt = 0
+    swch = False
+    btry = int(K)
+    dst_List.append(chrg_Station[0])
+    for i in range(0, len(chrg_Station)-1):
+        dist = chrg_Station[i+1] - chrg_Station[i]
+        dst_List.append(dist)
+    dst_List.append(N - chrg_Station[-1])
+    for i in range(0, len(dst_List)-1):
+        if dst_List[i] < btry:
+            if dst_List[i] + dst_List[i+1] <= btry:
+                continue
+            elif dst_List[i] + dst_List[i+1] > btry:
+                cnt += 1
+                btry = K
+                continue
+            continue
+        elif dst_List[i] > btry:
+            print(0)
+            swch = True
+            break
+        elif dst_List[i] == btry:
+            btry = K
+            cnt += 1 
+            continue
+    if swch == False:
+        print(f'#{t+1} {cnt}')
 
 
 
